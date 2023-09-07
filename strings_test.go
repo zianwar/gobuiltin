@@ -13,10 +13,12 @@ import (
 func TestString(t *testing.T) {
 
 	fmt.Println("\n================== String functions ==================")
-	// Trims the characeters in "x " from start and end of string
+
+	// Trims the characters in "x " from start and end of string
 	fmt.Println("s:", strings.Trim("x abc de x", "x "))
 
 	fmt.Println("\n================== String literals (escape characters) ==================")
+
 	fmt.Println("")                      // Default zero value for type string
 	fmt.Println("Japan 日本")              // Japan 日本	Go code is Unicode text encoded in UTF‑8
 	fmt.Println("\xe6\x97\xa5")          // 日	\xNN specifies a byte
@@ -78,6 +80,7 @@ func TestString(t *testing.T) {
 	// Output: 'J' 'a' 'p' 'a' 'n' ' ' 'æ' '\u0097' '¥' 'æ' '\u009c' '¬'
 
 	fmt.Println("\n\n================== Search (contains, prefix/suffix, index) ==================")
+
 	fmt.Println(strings.Contains("Japan", "abc"))     //	false	Is abc in Japan?
 	fmt.Println(strings.ContainsAny("Japan", "abc"))  //	true	Is a, b or c in Japan?
 	fmt.Println(strings.Count("Banana", "ana"))       //	1	Non-overlapping instances of ana
@@ -97,7 +100,6 @@ func TestString(t *testing.T) {
 	fmt.Println(strings.Map(f, "ab"))            //bc	Apply function to each character
 	fmt.Println(strings.ToUpper("Japan"))        //JAPAN	Uppercase
 	fmt.Println(strings.ToLower("Japan"))        //japan	Lowercase
-	fmt.Println(strings.Title("ja pan"))         //Ja Pan	Initial letters to uppercase
 	fmt.Println(strings.TrimSpace(" foo\n"))     //foo	Strip leading and trailing white space
 	fmt.Println(strings.Trim("foo", "fo"))       //	Strip leading and trailing f:s and o:s
 	fmt.Println(strings.TrimLeft("foo", "f"))    //oo	only leading
